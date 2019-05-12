@@ -1,0 +1,11 @@
+.card-container {
+  border: 1px solid black;
+  width: 300px;
+  padding: 30px;
+  margin: 30px;
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+.card-container-text {
+  font-size: 12px;
+}
