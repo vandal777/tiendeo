@@ -5,7 +5,11 @@ import App from "./app/App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from 'react-redux'
 import { store } from "./helpers/store";
+import { saveState } from "./helpers/storage";
 
+store.subscribe( function () {
+  saveState(store.getState())
+})
 ReactDOM.render(
   <Provider store={store}>
     <App />

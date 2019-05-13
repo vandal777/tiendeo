@@ -29,6 +29,7 @@ class EditModal extends React.Component<any, any> {
   }
 
   handleEditCard() {
+    this.setState({...this.props.editCard})
     const { title, url, description } = this.state
     const id = this.props.editCard.id;
     const card: ICard = {
@@ -37,7 +38,7 @@ class EditModal extends React.Component<any, any> {
       url,
       description
     }
-    title !== '' && description !== '' && this.props.addEditCard(card)
+    card.title !== '' && card.description !== '' && this.props.addEditCard(card)
   }
 
   render() {

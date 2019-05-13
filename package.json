@@ -11,6 +11,8 @@
     "@types/react-dom": "^16.8.4",
     "@types/react-redux": "^7.0.8",
     "@types/redux-promise": "^0.5.28",
+    "immutable": "^4.0.0-rc.12",
+    "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
