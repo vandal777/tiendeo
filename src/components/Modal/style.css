@@ -10,12 +10,36 @@
 .modal-main {
   position:fixed;
   background: white;
-  width: 80%;
+  width: calc(80% - 30px);
   height: auto;
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
+  padding: 30px;
 }
+
+.modal-main input{
+  display: block;
+  padding: 10px;
+  border: 1px solid black;
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+}
+
+.modal-main .add-cta{
+  width: 150px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.modal-main .close-cta{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  display: block;
+}
+
 
 .display-block {
   display: block;

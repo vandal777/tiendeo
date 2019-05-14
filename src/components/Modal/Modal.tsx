@@ -48,8 +48,8 @@ class Modal extends React.Component<any, any> {
           <input type="text" placeholder={'Titulo'} name="title" onChange={this.handleInputChange} />
           <input type="text" placeholder={'Descripcion'} name="description" onChange={this.handleInputChange} />
           <input type="text" placeholder={'Url'} name="url" onChange={this.handleInputChange} />
-          <button onClick={this.handleAddCard} > Add Card </button>
-          <button onClick={this.props.closeModal}> Close Modal </button>
+          <button className={"add-cta"} onClick={this.handleAddCard} > Add Card </button>
+          <button className={"close-cta"} onClick={this.props.closeModal}>X</button>
         </section >
       </div >
     );

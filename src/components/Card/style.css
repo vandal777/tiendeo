@@ -1,9 +1,27 @@
 .card-container {
-  border: 1px solid black;
-  width: 300px;
-  padding: 30px;
-  margin: 30px;
+  width: 100%;
   box-shadow: 10px 10px 5px #aaaaaa;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 20px;
+}
+
+@media (min-width: 540px) {
+  .card-container {
+    width: calc(50% - 40px);
+  }
+}
+
+@media (min-width: 720px) {
+  .card-container {
+    width: calc(33.3333% - 40px);
+  }
+}
+
+@media (min-width: 960px) {
+  .card-container {
+    width: calc(25% - 40px);
+  }
 }
 
 .card-container-text {
