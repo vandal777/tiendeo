@@ -46,11 +46,16 @@ export function cardsReducer(
         cards: [...cards]
       };
     case DELETE_CARD:
+    const filtered = state.cards.filter(function(value){
+    
+        return value.id !== action.payload
+    
+    });
+    
       return {
         ...state,
         cards: [
-          ...state.cards.slice(0, action.payload),
-          ...state.cards.slice(action.payload + 1)
+          ...filtered
         ]
       };
     default:

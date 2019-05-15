@@ -1,5 +1,4 @@
 import React from "react";
-import { urls } from '../../../constants/const';
 
 interface ICardHeaderProps {
   title: string;
@@ -8,14 +7,8 @@ interface ICardHeaderProps {
 
 const CardHeader = (props: ICardHeaderProps) => {
 
-  const url = props.url ? props.url : urls.PHOTO_DEFAULT_URL
-
-  const style = {
-    backgroundImage: `url("${url}")`
-  };
-
   return (
-    <div style={style}>
+    <div>
       <h1>{props.title}</h1>
     </div>
   );

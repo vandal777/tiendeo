@@ -8,7 +8,7 @@ import { store } from "./helpers/store";
 import { saveState } from "./helpers/storage";
 
 store.subscribe( function () {
-  saveState(store.getState())
+  saveState({ cards: store.getState().cards })
 })
 ReactDOM.render(
   <Provider store={store}>
