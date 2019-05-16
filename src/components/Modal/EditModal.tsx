@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './style.css';
 import { connect } from 'react-redux';
 import { ICard } from '../../store/cards/types';
 import { closeEditModal } from '../../store/modal/actions';
 import { addEditCardAsync } from '../../store/cards/actions';
 
-class EditModal extends React.Component<any, any> {
+class EditModal extends Component<any, any>{
   constructor(props: any) {
     super(props);
     this.state = {
@@ -15,9 +15,12 @@ class EditModal extends React.Component<any, any> {
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleEditCard = this.handleEditCard.bind(this);
-    this.setEditCard = this.setEditCard.bind(this);
   }
 
+  private titleRef = React.createRef<HTMLInputElement>()
+  private descriptionRef = React.createRef<HTMLInputElement>()
+  private urlRef = React.createRef<HTMLInputElement>()
+  
   handleInputChange(event: any) {
     const target = event.target;
     const value = target.value;
@@ -27,33 +30,51 @@ class EditModal extends React.Component<any, any> {
       [name]: value
     });
   }
-componentDidMount() {
-      this.setState({
+  componentDidMount() {
+    this.setState({
       title: this.props.editCard.title,
       description: this.props.editCard.description,
       url: this.props.editCard.url
     });
-}
+  }
 
   handleEditCard() {
+    let titleRefNode = null;
+    let descriptionRefNode = null;
+    let urlRefNode = null;
+
+    let TitleValue = '';
+    let DescriptionValue = '';
+    let UrlValue = '';
+
+    if (this.titleRef.current && this.descriptionRef.current && this.urlRef.current) {
+      titleRefNode = this.titleRef.current
+      descriptionRefNode = this.descriptionRef.current
+      urlRefNode = this.urlRef.current
+
+      TitleValue = titleRefNode.value
+      DescriptionValue = descriptionRefNode.value
+      UrlValue = urlRefNode.value
+
+
+    }
+
     let card: ICard = {
       id: 0,
       title: '',
       url: '',
       description: ''
     };
+
     card.id = this.props.editCard.id;
-    card.title = this.state.title;
-    card.url = this.state.url;
-    card.description = this.state.description;
-    console.log('estate', this.state);
-    console.log('card', card);
+    card.title = TitleValue;
+    card.description = DescriptionValue;
+    card.url = UrlValue;
+
     card.title !== '' &&
       card.description !== '' &&
       this.props.addEditCard(card);
   }
-
-  setEditCard() {}
 
   render() {
     return (
@@ -66,6 +87,7 @@ componentDidMount() {
               defaultValue={this.props.editCard.title}
               name="title"
               onChange={this.handleInputChange}
+              ref={this.titleRef}
             />
             <input
               type="text"
@@ -73,6 +95,7 @@ componentDidMount() {
               defaultValue={this.props.editCard.description}
               name="description"
               onChange={this.handleInputChange}
+              ref={this.descriptionRef}
             />
             <input
               type="text"
@@ -80,6 +103,7 @@ componentDidMount() {
               defaultValue={this.props.editCard.url}
               name="url"
               onChange={this.handleInputChange}
+              ref={this.urlRef}
             />
             <button onClick={this.handleEditCard}> Finish edit </button>
             <button className={'close-cta'} onClick={this.props.closeEditModal}>

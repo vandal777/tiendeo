@@ -6,25 +6,3 @@
   margin: 20px;
   height: 300px;
 }
-
-@media (min-width: 540px) {
-  .card-container {
-    width: calc(50% - 40px);
-  }
-}
-
-@media (min-width: 720px) {
-  .card-container {
-    width: calc(33.3333% - 40px);
-  }
-}
-
-@media (min-width: 960px) {
-  .card-container {
-    width: calc(25% - 40px);
-  }
-}
-
-.card-container-text {
-  font-size: 12px;
-}
