@@ -5,7 +5,6 @@ import CardBody from "./CardBody/CardBody";
 import { ICard } from '../../store/cards/types';
 import { urls } from "../../constants/const";
 
-
 const Card = (props: ICard) => {
   const url = props.url ? props.url : urls.PHOTO_DEFAULT_URL
 
@@ -15,7 +14,7 @@ const Card = (props: ICard) => {
 
   const card = props;
   return (
-    <div  style={style} className={"card-container"}>
+    <div style={style} className={"card-container"}>
       <CardHeader title={card.title} url={card.url} />
       <CardBody card={card}/>
     </div>
