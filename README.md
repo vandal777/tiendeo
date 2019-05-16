@@ -29,6 +29,7 @@ npm run build # for run in production mode
 ## Future work
 
 - Refactor modal for not use ref()
+- Message for required input on forms
 - Style all the components and screens(Full responsive).
 - Make the Modal with dynamic imports 
 - Write better Readme.md
