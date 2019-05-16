@@ -2,7 +2,7 @@
 
 This App was created with create-react-app
 
-## Installation
+## Requirements
 
 we have some some requirements for run this project:
 
